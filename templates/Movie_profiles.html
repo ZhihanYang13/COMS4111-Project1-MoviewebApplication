@@ -1,0 +1,65 @@
+{% extends "index.html" %}
+
+{% block title %}
+<title> {{name}}'s Profile </title>
+{% endblock %}
+
+<head>
+{% block body %}
+<html>
+  <style>
+    body{
+      font-size: 15pt;
+      font-family: arial;
+    }
+  </style>
+
+<body>
+  <h1 style="font-size:25px">{{name}}'s Profile</h1>
+
+<p>
+  <h1 style="font-size:10px">Profile_list</h1>
+<table border="1">
+  <tr>
+    <th>Title</th>
+      <th>Languages</th>
+    <th>crew</th>
+    <th>genres</th>
+      <th>characters</th>
+      <th>company</th>
+  </tr>
+  {% for n in title %}
+  <tr>
+      <td> {{n.title}} </td>
+     <td> <a href="{{url_for('Languages',name=n.title)}}"> Languages</a></td>
+     <td> <a href="{{url_for('Crew',name=n.title)}}"> Crew</a></td>
+     <td> <a href="{{url_for('Genres',name=n.title)}}"> Genres </a></td>
+       <td> <a href="{{url_for('Characters',name=n.title)}}"> Characters </a></td>
+       <td> <a href="{{url_for('Company',name=n.title)}}"> Company </a></td>
+  </tr>
+  {% endfor %}
+</table>
+</p>
+  <p>
+  <h1 style="font-size:15px">Users' Comments and Ratings</h1>
+  <table border="1">
+  <tr>
+    <th>Title</th>
+      <th>Ratings</th>
+    <th>user</th>
+    <th>comment</th>
+  </tr>
+  {% for n in data %}
+  <tr>
+    <td> {{n.title}} </td>
+    <td> {{n.rating}} </td>
+    <td> {{n.user}} </td>
+    <td> {{n.comment}} </td>
+  </tr>
+  {% endfor %}
+</table>
+  </p>
+</body>
+
+</html>
+{% endblock %}

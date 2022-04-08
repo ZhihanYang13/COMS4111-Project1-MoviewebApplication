@@ -1,0 +1,31 @@
+{% extends "index.html" %}
+
+{% block title %}
+<title> {{name}}'s Companies</title>
+{% endblock %}
+
+<head>
+{% block body %}
+<html>
+  <style>
+    body{
+      font-size: 15pt;
+      font-family: arial;
+    }
+  </style>
+<body>
+  <h1>{{name}}'s companies</h1>
+  <p>{{ data|length }} records</p>
+<table border="1">
+  <tr>
+    <th>{{Company}}</th>
+  </tr>
+  {% for n in data %}
+  <tr>
+      <td> {{n.company}} </td>
+  </tr>
+  {% endfor %}
+</table>
+</body>
+</html>
+{% endblock %}

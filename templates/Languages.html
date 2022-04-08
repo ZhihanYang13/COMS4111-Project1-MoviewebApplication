@@ -1,0 +1,31 @@
+{% extends "index.html" %}
+
+{% block title %}
+<title> {{name}}'s languages </title>
+{% endblock %}
+
+<head>
+{% block body %}
+<html>
+  <style>
+    body{
+      font-size: 15pt;
+      font-family: arial;
+    }
+  </style>
+<body>
+  <h1>{{name}}'s languages</h1>
+  <p>{{ data|length }} records</p>
+<table border="1">
+  <tr>
+    <th>{{name}}</th>
+  </tr>
+  {% for n in data %}
+  <tr>
+      <td> {{n.languages}} </td>
+  </tr>
+  {% endfor %}
+</table>
+</body>
+</html>
+{% endblock %}
