@@ -23,4 +23,5 @@ Get help:
 
         python server.py --help
 
-      
+Open in web browser:
+        externalIP:8111
