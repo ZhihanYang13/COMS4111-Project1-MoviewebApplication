@@ -6,7 +6,7 @@ Install pip if needed
 
 Install libraries
 
-        pip install click flask sqlalchemy
+        pip install -r requirements.txt
 
 
 Edit `server.py` to set your database URI
