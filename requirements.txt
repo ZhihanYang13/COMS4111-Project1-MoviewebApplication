@@ -1,0 +1,7 @@
+SQLAlchemy==1.4.27
+flask==2.0.2
+click>=7.1.2
+flask_wtf
+flask_bootstrap
+jinja2
+wtforms==2.2.1

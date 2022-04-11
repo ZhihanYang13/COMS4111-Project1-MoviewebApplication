@@ -1,0 +1,43 @@
+{% extends "index.html" %}
+
+{% block title %}
+<title> {{name}}'s Profiles</title>
+{% endblock %}
+
+
+{% block body %}
+<html>
+  <style>
+    body{
+      font-size: 15pt;
+      font-family: arial;
+    }
+  </style>
+<body>
+  <h1>{{name}}'s Profiles</h1>
+  <p>{{ actor|length }} records</p>
+<table border="1">
+  <tr>
+    <th>actor</th>
+      <th>gender</th>
+    <th>movie_list</th>
+    <th>follower_list</th>
+  </tr>
+  {% for n in actor %}
+  <tr>
+    <td>{{n.actor}}</td>
+    <td>{{n.gender}}</td>
+    <td><a href="{{url_for('movielist',name=n.actor)}}"> movielist </a> </td>
+    <td><a href="{{url_for('followlist',name=n.actor)}}"> followerlist </a></td>
+  </tr>
+    {% endfor %}
+</table>
+
+ <h3> Follow this actor: </h3>
+ <form method = 'post' >
+     <input type='submit' value='Follow'  name='Action1'>
+ </form>
+ 
+</body>
+</html>
+{% endblock %}

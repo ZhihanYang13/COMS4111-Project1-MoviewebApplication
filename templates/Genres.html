@@ -1,0 +1,31 @@
+{% extends "index.html" %}
+
+{% block title %}
+<title> {{name}}'s Genres </title>
+{% endblock %}
+
+<head>
+{% block body %}
+<html>
+  <style>
+    body{
+      font-size: 15pt;
+      font-family: arial;
+    }
+  </style>
+<body>
+  <h1>{{name}}'s Genres</h1>
+  <p>{{ genres|length }} records</p>
+<table border="1">
+  <tr>
+    <th>genres</th>
+  </tr>
+  {% for n in genres%}
+  <tr>
+      <td> {{n.genre}} </td>
+  </tr>
+  {% endfor %}
+</table>
+</body>
+</html>
+{% endblock %}

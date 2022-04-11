@@ -1,0 +1,25 @@
+{% extends 'movies.html' %}
+
+{% block title %}
+<title> Actors' list</title>
+{% endblock %}
+
+{% block body %}
+<html>
+<body>
+<table border='1'>
+
+<tr>
+ <th> Actor </th>
+ <th> Page </th>
+</tr>
+{% for n in actors %}
+<tr>
+<td> {{n.actor}} </td>
+<td> <a href="{{ url_for('Actor', name=n.actor) }}"> Page </a></td>
+</tr>
+{% endfor %}
+</table>
+</body>
+</html>
+{% endblock %}

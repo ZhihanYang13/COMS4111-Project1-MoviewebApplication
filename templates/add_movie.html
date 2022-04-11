@@ -1,0 +1,29 @@
+{% extends "index.html" %}
+
+<head>
+{% block body %}
+<html>
+  <style>
+    body{
+      font-size: 15pt;
+      font-family: arial;
+    }
+  </style>
+
+<body>
+  <p> Movie's name: {{movie}}</p>
+  <table border="1">
+  <tr>
+    <th>Like list</th>
+  </tr>
+    {% for n in likelist %}
+  <tr>
+     <td> <a href="{{url_for('include_likelist',lname=n.name, mname=movie)}}"> likelist: {{n.name}} </a></td>
+  </tr>
+    {% endfor %}
+  </table>
+
+</body>
+
+</html>
+{% endblock %}

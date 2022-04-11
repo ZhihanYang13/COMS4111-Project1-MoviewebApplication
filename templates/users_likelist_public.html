@@ -1,0 +1,39 @@
+{% extends "index.html" %}
+
+{% block title %}
+<title> Users_likelist-Main Page </title>
+{% endblock %}
+
+{% block body %}
+<html>
+  <style>
+    body{
+      font-size: 15pt;
+      font-family: arial;
+    }
+  </style>
+
+<body>
+     {% for n in user %}
+  <h1>{{n.user}} 's likelist</h1>
+     {% endfor %}
+  <p>{{ data|length }} records</p>
+<table border="1">
+  <tr>
+    <th>User's name</th>
+    <th>like_list</th>
+    <th>like_id</th>
+    <th>movie_title</th>
+  </tr>
+  {% for n in likelist %}
+  <tr>
+    <td>{{n.User_name}}</td>
+    <td>{{n.like_list_name }}</td>
+    <td>{{n.id}}</td>
+    <td>{{n.users_follow}}</td>
+  </tr>
+  {% endfor %}
+</table>
+</body>
+</html>
+{% endblock %}

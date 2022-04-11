@@ -1,0 +1,30 @@
+{% extends "index.html" %}
+
+{% block title %}
+<title> {{name}}'s follower lists</title>
+{% endblock %}
+
+{% block body %}
+<html>
+  <style>
+    body{
+      font-size: 15pt;
+      font-family: arial;
+    }
+  </style>
+<body>
+  <h1>{{name}}'s follower lists</h1>
+  <p>{{ flist|length }} records</p>
+<table border="1">
+  <tr>
+      <th>User</th>
+  </tr>
+  {% for n in flist %}
+  <tr>
+    <td>{{n.follower}}</td>
+  </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
+{% endblock %}

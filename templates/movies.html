@@ -1,0 +1,42 @@
+{% extends "index.html" %}
+
+{% block title %}
+<title> Movies-Main Page </title>
+{% endblock %}
+
+{% block body %}
+<html>
+  <style>
+    body{
+      font-size: 15pt;
+      font-family: arial;
+    }
+  </style>
+
+<body>
+<body>
+  <h1>Movie Main Page</h1>
+    <h2>Actors </h2>
+  <p> <a href="/Actor"> Actors' list </a></p>
+  <p>{{ movie|length }} records</p>
+<table border="1">
+  <tr>
+    <th>Title</th>
+    <th>Overview</th>
+    <th>Release_date</th>
+
+  </tr>
+  {% for n in movie %}
+  <tr>
+
+     <td> <a href="{{url_for('profiles',name=n.title)}}"> {{n.title}} </a></td>
+     <td>  {{n.overview}} </td>
+    <td>{{n.release_date}}</td>
+  </tr>
+  {% endfor %}
+</table>
+</body>
+
+</body>
+</html>
+{% endblock %}
